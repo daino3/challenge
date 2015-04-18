@@ -5,6 +5,7 @@ require 'pry'
 require 'rack/test'
 require 'rspec'
 require 'sinatra'
+require 'factory_girl'
 
 # can't reuse APP_ROOT bc environment not loaded
 root = Pathname.new(File.expand_path('../../', __FILE__))
@@ -20,6 +21,9 @@ module RSpecMixin
   end
 end
 
+FactoryGirl.definition_file_paths = Dir["#{root}/spec/factories"]
+FactoryGirl.find_definitions
+
 # set environment to test for database logic
 Sinatra::Base.set :environment, :test
 Sinatra::Base.set :views, File.join(root, "app", "views")
@@ -31,6 +35,7 @@ Capybara.app = CivisAnalyticsApp::App
 
 RSpec.configure do |config|
 
+  config.include FactoryGirl::Syntax::Methods
   config.include RSpecMixin
   config.include Capybara::DSL
   config.filter_run :focus => true

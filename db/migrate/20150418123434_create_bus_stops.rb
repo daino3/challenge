@@ -10,5 +10,7 @@ class CreateBusStops < ActiveRecord::Migration
       t.string :daytype
       t.date :month_beginning
     end
+
+    add_index :bus_stops, [:street_id, :cross_street_id]
   end
 end

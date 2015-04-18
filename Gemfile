@@ -27,6 +27,7 @@ end
 group :test do
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'factory_girl'
   gem 'rack-test'
   gem 'rspec'
   gem 'sqlite3'
