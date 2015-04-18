@@ -8,7 +8,7 @@ class CreateBusStops < ActiveRecord::Migration
       t.float :boardings
       t.float :alightings
       t.string :daytype
-      t.date
+      t.date :month_beginning
     end
   end
 end

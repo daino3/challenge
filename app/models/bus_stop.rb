@@ -6,6 +6,4 @@ class BusStop < ActiveRecord::Base
   belongs_to :street
   belongs_to :cross_street, class_name: 'Street'
 
-  attr_accessor :latitude, :longitude, :street, :cross_street
-
 end

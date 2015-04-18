@@ -45,3 +45,9 @@ else
     :encoding => 'utf8'
   )
 end
+
+begin
+  ActiveRecord::Base.connection
+rescue ActiveRecord::NoDatabaseError
+  false
+end
