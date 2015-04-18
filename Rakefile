@@ -1,6 +1,7 @@
 require 'rake'
 require_relative './config/environment'
 require 'active_support/core_ext'
+Dir.glob('./lib/tasks/*.rake').each { |r| load r}
 
 namespace :generate do
   desc "Create an empty migration in db/migrate, e.g., rake generate:migration NAME=create_tasks"
