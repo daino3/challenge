@@ -27,8 +27,7 @@ module CivisAnalyticsApp
 
       js :application, '/application.js', [
         '/js/underscore.js',
-        '/js/jquery.payment.js',
-        '/js/form.js'
+        '/js/application.js'
       ]
 
     }
