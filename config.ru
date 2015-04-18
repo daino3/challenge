@@ -2,4 +2,4 @@
 
 require './config/environment'
 
-run ChicagoLotManagement::App.new
+run CivisAnalyticsApp::App.new

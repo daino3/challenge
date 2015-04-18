@@ -14,7 +14,6 @@ gem 'slim'
 # Misc
 gem 'hashie'
 gem 'rake'
-gem 'stripe'
 gem 'thin'
 
 # Database
@@ -33,4 +32,4 @@ group :test do
   gem 'sqlite3'
 end
 
-ruby '2.1.2'
+ruby '2.1.1'

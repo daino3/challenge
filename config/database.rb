@@ -1,6 +1,6 @@
 
 # Log queries to STDOUT in development
-if ChicagoLotManagement::App.development?
+if CivisAnalyticsApp::App.development?
   ActiveRecord::Base.logger = Logger.new(STDOUT)
 end
 
@@ -24,12 +24,12 @@ end
 
 # Heroku controls what database we connect to by setting the DATABASE_URL environment variable
 # We need to respect that if we want our Sinatra apps to run on Heroku without modification
-env = ChicagoLotManagement::App.environment.to_s
+env = CivisAnalyticsApp::App.environment.to_s
 db = URI.parse(ENV['DATABASE_URL'] || "postgres://localhost/#{APP_NAME}_#{env}")
 
 DB_NAME = db.path[1..-1]
 
-if ChicagoLotManagement::App.test?
+if CivisAnalyticsApp::App.test?
   # in memory database for test environment
   require 'sqlite3'
   ActiveRecord::Base.establish_connection(adapter: "sqlite3", database: ":memory:")

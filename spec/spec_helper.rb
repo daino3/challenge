@@ -16,7 +16,7 @@ ENV['RACK_ENV'] = 'test'
 module RSpecMixin
   include Rack::Test::Methods
   def app
-    ChicagoLotManagement::App
+    CivisAnalyticsApp::App
   end
 end
 
@@ -27,7 +27,7 @@ Sinatra::Base.set :views, File.join(root, "app", "views")
 # load up the application
 require_relative "../config/environment"
 
-Capybara.app = ChicagoLotManagement::App
+Capybara.app = CivisAnalyticsApp::App
 
 RSpec.configure do |config|
 

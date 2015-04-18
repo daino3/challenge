@@ -3,5 +3,4 @@
 .sass-cache
 .env
 
-/config/stripe_secret.yml
 /config/credentials_secret.yml

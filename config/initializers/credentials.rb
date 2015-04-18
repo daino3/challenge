@@ -1,6 +1,6 @@
 require 'yaml'
 
-env = ChicagoLotManagement::App.environment.to_s
+env = CivisAnalyticsApp::App.environment.to_s
 
 development_file = "#{APP_ROOT}/config/credentials_secret.yml"
 

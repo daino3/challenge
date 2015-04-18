@@ -1,4 +1,4 @@
-module ChicagoLotManagement
+module CivisAnalyticsApp
   class App < Sinatra::Base
 
     # def html_safe(str)

@@ -25,8 +25,6 @@ require 'sinatra/partial'
 require 'slim'
 # API response hash / json helper
 require 'hashie'
-# stripe gem
-require 'stripe'
 # require 'pry'
 require 'yaml'
 # Used to create unique account_codes

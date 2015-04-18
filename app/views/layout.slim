@@ -9,20 +9,10 @@ doctype html
   html.no-js lang="en"
 
 head
-  title = "Chicago Lot Management"
-  == partial(:'shared/meta')
+  title = "Civis Code Challenge"
   == partial(:'shared/scripts')
   == css :application
   == js :application
-
-  javascript:
-    // Configure stripe.js
-    Stripe.setPublishableKey('pk_test_T1fudZUAy97QWvSz9Fo5b94u');
-
-    $.get('/plan-data', function(response) {
-      window.StripePricing = response
-      window.currentPlan = "#{@plan.id if @plan}"
-    })
 
 body
   .row

@@ -1,6 +1,6 @@
 require './app'
 
-guard 'sprockets2', :sprockets => ChicagoLotManagement::App.sprockets do
+guard 'sprockets2', :sprockets => CivisAnalyticsApp::App.sprockets do
   watch(%r{^assets/.+$})
   watch('app.rb')
 end
