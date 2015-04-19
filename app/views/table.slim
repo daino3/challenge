@@ -1,0 +1,25 @@
+.row
+  table.small-12-columns.table-view
+    caption Routes
+    tr
+      th Id
+      th Street
+      th Cross Street
+      th Routes
+      th Boardings
+      th Alightings
+      th Month Beginning
+      th Day Type
+      th Location
+
+    - for stop in @stops do
+      tr
+        td.id = stop.id
+        td.street = stop.street.name
+        td.cross_street = stop.cross_street.name
+        td.routes = stop.display_routes
+        td.boardings = stop.boardings
+        td.alightings = stop.alightings
+        td.month_beginning = stop.month_beginning
+        td.day_type = stop.daytype
+        td.location = stop.location

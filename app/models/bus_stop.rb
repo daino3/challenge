@@ -15,4 +15,12 @@ class BusStop < ActiveRecord::Base
     end
   end
 
+  def display_routes
+    "#{routes.map(&:name).join(',')}"
+  end
+
+  def location
+    "lat: #{latitude}, long: #{longitude}"
+  end
+
 end

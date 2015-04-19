@@ -25,7 +25,7 @@ require 'sinatra/partial'
 require 'slim'
 # API response hash / json helper
 require 'hashie'
-# require 'pry'
+require 'pry'
 require 'yaml'
 # Used to create unique account_codes
 require 'securerandom'

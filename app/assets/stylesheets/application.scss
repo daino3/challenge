@@ -5,3 +5,23 @@
 // foundation
 @import 'foundation/settings';
 @import 'foundation/foundation';
+
+html, body, #map { height: 100%; margin: 0; padding: 0;}
+
+.legend {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10000;
+  width: 200px;
+  caption {
+    background: white;
+  }
+}
+
+td.name {
+  &:hover {
+    cursor: pointer;
+  }
+}

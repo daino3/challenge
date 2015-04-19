@@ -15,6 +15,7 @@ gem 'slim'
 gem 'hashie'
 gem 'rake'
 gem 'thin'
+gem 'active_model_serializers'
 
 # Database
 gem 'activerecord'

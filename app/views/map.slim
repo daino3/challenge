@@ -1,0 +1,11 @@
+#map
+table.small-6-columns.legend
+  caption Routes
+  tr
+    th Route Name
+    th Stops
+
+  - for route in @routes do
+    tr
+      td.name data-id="#{route.id}" = route.name
+      td.stops = route.number_of_stops
