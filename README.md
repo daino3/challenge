@@ -1,40 +1,22 @@
-## Responsive Sinatra Form w/ Stripe Integration
+## Civis Analytics Code Challenge
 
-Couple niceties:
-+ Rails-like folder structure
-+ [Foundation](http://foundation.zurb.com/docs/) responsive framework 
-+ Postgres database config
-+ Underscore.js 
-+ Slim templating engine
-+ Stripe integration w/ quantity-based subscription
-+ Rspec
-+ WIP: [Google Places Form Autocomplete, Coffeescript, Backbone?, Admin?]
+### Set Up
+Clone to project and cd into directory.
+```
+bundle install
+rake populate:cta_data
+```
 
 ### Running Server 
 Default set to 3000 in config.ru
 
 ```
-bundle exec rackup
+rackup
 ```
 
 ### Running Specs
 ```
-bundle exec rspec spec
+rspec spec
 ```
-
-### Heroku
-
-Assuming you have Heroku setup.
-
-```
-heroku create
-```
-
-Pushing to heroku
-
-```
-git push heroku master
-```
-
 
 
