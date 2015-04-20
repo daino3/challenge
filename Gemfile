@@ -6,6 +6,7 @@ gem 'sinatra-contrib',require: false
 gem 'sinatra-support'
 gem 'sinatra-partial', require: 'sinatra/partial'
 gem 'sinatra-assetpack'
+gem "rack-cache"
 
 # Assets
 gem 'sass'

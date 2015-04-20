@@ -3,6 +3,7 @@ class CreateStreets < ActiveRecord::Migration
     create_table :streets do |t|
       t.string :name
 
+      t.timestamps
     end
   end
 end

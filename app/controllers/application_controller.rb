@@ -1,6 +1,19 @@
 module CivisAnalyticsApp
   class App < Sinatra::Base
 
+    use Rack::Cache,
+      :verbose     => true,
+      :metastore   => "file:#{APP_ROOT}/tmp/cache/rack/meta",
+      :entitystore => "file:#{APP_ROOT}/tmp/cache/rack/body",
+      :allow_reload     => false,
+      :allow_revalidate => false
+
+    before '/table' do
+      last_route = Route.maximum(:updated_at)
+      last_stop  = BusStop.maximum(:updated_at)
+      last_modified(max = last_route > last_stop ? last_route : last_stop)
+    end
+
     get '/map' do
       @routes = Route.order("number_of_stops DESC").all
       slim :map, layout: true
