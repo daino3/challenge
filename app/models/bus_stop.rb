@@ -15,6 +15,10 @@ class BusStop < ActiveRecord::Base
     end
   end
 
+  def intersection
+    "#{street.name} and #{cross_street.name}"
+  end
+
   def display_routes
     "#{routes.map(&:name).join(',')}"
   end

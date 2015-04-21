@@ -3,6 +3,7 @@ class CreateBusStops < ActiveRecord::Migration
     create_table :bus_stops do |t|
       t.belongs_to :street
       t.belongs_to :cross_street
+      t.integer :cta_stop_id
       t.float :longitude
       t.float :latitude
       t.float :boardings

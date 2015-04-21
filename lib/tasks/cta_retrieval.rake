@@ -20,10 +20,11 @@ namespace :populate do
 
   desc 'seed database with parsed CTA CSV data'
   task :parse do
+    errors = 0
     CSV.foreach(FILE_LOCATION, headers: true, header_converters: :symbol) do |row|
       attributes = row.to_hash
-      attributes.delete(:stop_id)
 
+      attributes[:cta_stop_id] = attributes.delete(:stop_id)
       attributes[:street] = Street.find_or_create_by(name: attributes.delete(:on_street))
       attributes[:cross_street] = Street.find_or_create_by(name: attributes[:cross_street])
       attributes[:alightings] = attributes[:alightings].to_f
@@ -38,15 +39,19 @@ namespace :populate do
                   Route.find_or_create_by(name: name)
                 end
               rescue
+                errors += 1
                 []
               end
 
       routes.each do |route|
-        unless route.nil? || route.bus_stops.where(street: attributes[:street], cross_street: attributes[:cross_street]).exists?
+        next if route.nil?
+
+        if BusStop.exists?(cta_stop_id: attributes[:cta_stop_id])
+          route.bus_stops << BusStop.find_by(cta_stop_id: attributes[:cta_stop_id])
+        else
           route.bus_stops << BusStop.create(attributes)
         end
       end
-
     end
   end
 end
